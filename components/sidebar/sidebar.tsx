@@ -62,58 +62,15 @@ export const SidebarWrapper = () => {
                         href="accounts"
                      />
                      <SidebarItem
-                        isActive={router.pathname === '/payments'}
-                        title="Payments"
-                        icon={<PaymentsIcon />}
-                     />
-                     <CollapseItems
-                        icon={<BalanceIcon />}
-                        items={['Banks Accounts', 'Credit Cards', 'Loans']}
-                        title="Balances"
-                     />
-
-                     <SidebarItem
-                        isActive={router.pathname === '/customers'}
-                        title="Customers"
-                        icon={<CustomersIcon />}
-                     />
-                     <SidebarItem
                         isActive={router.pathname === '/products'}
                         title="Products"
                         icon={<ProductsIcon />}
+                        href="products"
                      />
-                     <SidebarItem
-                        isActive={router.pathname === '/reports'}
-                        title="Reports"
-                        icon={<ReportsIcon />}
-                     />
+                    
                   </SidebarMenu>
 
-                  <SidebarMenu title="General">
-                     <SidebarItem
-                        isActive={router.pathname === '/developers'}
-                        title="Developers"
-                        icon={<DevIcon />}
-                     />
-                     <SidebarItem
-                        isActive={router.pathname === '/view'}
-                        title="View Test Data"
-                        icon={<ViewIcon />}
-                     />
-                     <SidebarItem
-                        isActive={router.pathname === '/settings'}
-                        title="Settings"
-                        icon={<SettingsIcon />}
-                     />
-                  </SidebarMenu>
-
-                  <SidebarMenu title="Updates">
-                     <SidebarItem
-                        isActive={router.pathname === '/changelog'}
-                        title="Changelog"
-                        icon={<ChangeLogIcon />}
-                     />
-                  </SidebarMenu>
+                  
                </Sidebar.Body>
                <Sidebar.Footer>
                   <Tooltip content={'Settings'} rounded color="primary">
