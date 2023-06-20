@@ -12,8 +12,8 @@ import {
 } from "@nextui-org/react";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const router = useRouter();
 
   const handleSubmit = async (event: FormEvent) => {
