@@ -72,6 +72,7 @@ const Login = () => {
           </Text>
           <form onSubmit={handleSubmit}>
             <Input
+              name="username"
               clearable
               bordered
               fullWidth
@@ -83,6 +84,7 @@ const Login = () => {
             />
             <Spacer y={1} />
             <Input
+              name="password"
               clearable
               bordered
               fullWidth
