@@ -14,8 +14,8 @@ interface Company {
 
 export const CompaniesDropdown = () => {
    const [company, setCompany] = useState<Company>({
-      name: 'Acme Co.',
-      location: 'Palo Alto, CA',
+      name: 'Ask Commerce.',
+      location: 'Lisboa, PT',
       logo: <AcmeIcon />,
    });
    return (
@@ -101,36 +101,6 @@ export const CompaniesDropdown = () => {
                },
             }}
          >
-            <Dropdown.Section title="Companies">
-               <Dropdown.Item
-                  key="1"
-                  icon={<AcmeIcon />}
-                  description="San Fransico, CA"
-               >
-                  Facebook
-               </Dropdown.Item>
-               <Dropdown.Item
-                  key="2"
-                  icon={<AcmeLogo />}
-                  description="Austin, Tx"
-               >
-                  Instagram
-               </Dropdown.Item>
-               <Dropdown.Item
-                  key="3"
-                  icon={<AcmeIcon />}
-                  description="Brooklyn, NY"
-               >
-                  Twitter
-               </Dropdown.Item>
-               <Dropdown.Item
-                  key="4"
-                  icon={<AcmeIcon />}
-                  description="Palo Alto, CA"
-               >
-                  Acme Co.
-               </Dropdown.Item>
-            </Dropdown.Section>
          </Dropdown.Menu>
       </Dropdown>
    );
