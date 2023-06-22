@@ -1,8 +1,8 @@
-import type {NextPage} from 'next';
-import {Content} from '../components/home/content';
+import type { NextPage } from "next";
+import Login from "../components/login/login";
 
 const Home: NextPage = () => {
-   return <Content />;
+  return <Login />;
 };
 
 export default Home;
