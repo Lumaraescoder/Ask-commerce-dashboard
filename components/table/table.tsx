@@ -5,38 +5,12 @@ import {columns, users} from './data';
 import {RenderCell} from './render-cell';
 import { useState, FormEvent, useEffect } from "react";
 import { useRouter } from "next/router";
+import useSWR from 'swr';
+
+const getAllProducts = (url: string) =>
+fetch(url).then((res) => res.json());
 
 export const TableWrapper = () => {
-
-   const [product, setUsername] = useState<string>("");
-
-   const router = useRouter();
- 
-   const handleSubmit = async () => {
-      try {
-        // API call
-        const res = await fetch("http://localhost:3000/products", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ product }),
-        });
-  
-        console.log("products ->", product);
-  
-        if (res.status === 404) {
-          alert("Produtos não encontrados!");
-        }
-      } catch (error) {
-        console.error("Erro na chamada à API:", error);
-        alert("Foi encontrado um problema com o servidor!");
-      }
-    };
-  
-    useEffect(() => {
-      handleSubmit();
-    }, []);
 
 
 
