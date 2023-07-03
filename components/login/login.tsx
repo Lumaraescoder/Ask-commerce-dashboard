@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
+import jwt_decode from "jwt-decode";
 import React from "react";
 import {
   Card,
@@ -44,7 +45,19 @@ const Login = () => {
       });
 
       if (res.ok) {
-        await router.push("/dashboard");
+        const data = await res.json();
+        const { token, isAdmin } = data;
+
+        const decodedToken = jwt_decode(token) as { id: string };
+        const userId = decodedToken.id;
+        localStorage.setItem("userId", userId);
+
+        if (isAdmin) {
+          await router.push("/dashboard");
+        } else {
+          const userId = localStorage.getItem("userId");
+          window.location.href = `http://localhost:8000/?userId=${userId}`;
+        }
       } else if (res.status === 404) {
         alert("Utilizador não encontrado!");
       } else {
