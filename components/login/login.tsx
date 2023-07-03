@@ -11,6 +11,15 @@ import {
   Container,
 } from "@nextui-org/react";
 
+const CardTextStyle = {
+  textAlign: "center",
+  marginBottom: "20px",
+  backgroundClip: "text",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundImage: "linear-gradient(45deg, #0099ff, #0066cc)", // Cores azuis
+};
+
 const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -56,18 +65,7 @@ const Login = () => {
         css={{ minHeight: "100vh" }}
       >
         <Card css={{ mw: "420px", p: "20px" }}>
-          <Text
-            size={24}
-            weight="bold"
-            css={{
-              textAlign: "center",
-              marginBottom: "20px",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundImage: "linear-gradient(45deg, #0099ff, #0066cc)", // Cores azuis
-            }}
-          >
+          <Text size={24} weight="bold" css={CardTextStyle}>
             Ask Commerce Login
           </Text>
           <form onSubmit={handleSubmit}>

@@ -3,8 +3,17 @@ import React from 'react';
 import {Box} from '../styles/box';
 import {columns, users} from './data';
 import {RenderCell} from './render-cell';
+import { useState, FormEvent, useEffect } from "react";
+import { useRouter } from "next/router";
+import useSWR from 'swr';
+
+const getAllProducts = (url: string) =>
+fetch(url).then((res) => res.json());
 
 export const TableWrapper = () => {
+
+
+
    return (
       <Box
          css={{

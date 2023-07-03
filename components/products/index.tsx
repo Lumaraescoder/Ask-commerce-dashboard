@@ -13,8 +13,8 @@ import {Flex} from '../styles/flex';
 import {TableWrapper} from '../product-table/table';
 import {AddUser} from './add-product';
 
-
 export const Products = () => {
+
     return (
         <Flex
         css={{
