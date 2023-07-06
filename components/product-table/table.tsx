@@ -24,14 +24,13 @@ export const TableWrapper = () => {
     getAllProducts
   );
 
+
   useEffect(() => {
     if (data) {
       setProducts(data);
     }
   }, [data]);
 
-
-  console.log("prodcuts data", data);
   return (
     <Box
       css={{
