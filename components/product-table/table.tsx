@@ -20,7 +20,7 @@ export interface Product {
 export const TableWrapper = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const { data, error } = useSWR<Product[]>(
-    "http://localhost:3000/products",
+    "http://localhost:3333/products",
     getAllProducts
   );
 

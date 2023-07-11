@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       // Chamada à API
-      const res = await fetch("http://localhost:3000/auth/login", {
+      const res = await fetch("http://localhost:3333/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,6 +56,7 @@ const Login = () => {
           await router.push("/dashboard");
         } else {
           const userId = localStorage.getItem("userId");
+          document.cookie = `userId=${userId}; path=/;`;
           window.location.href = `http://localhost:8000/?userId=${userId}`;
         }
       } else if (res.status === 404) {
