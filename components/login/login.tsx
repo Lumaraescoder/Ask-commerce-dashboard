@@ -55,7 +55,6 @@ const Login = () => {
         if (isAdmin) {
           await router.push("/dashboard");
         } else {
-          //change para utilizar userId nos cookies
           //use of cookies to help the feature cartByUserId to use the userId in the frontend with the auth from the dashboard
           //changes to the port used to access the backend from 3000 to 3333
           const userId = localStorage.getItem("userId");
