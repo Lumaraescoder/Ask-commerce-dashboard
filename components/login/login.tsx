@@ -55,6 +55,7 @@ const Login = () => {
         if (isAdmin) {
           await router.push("/dashboard");
         } else {
+          //change para utilizar userId nos cookies
           const userId = localStorage.getItem("userId");
           document.cookie = `userId=${userId}; path=/;`;
           window.location.href = `http://localhost:8000/?userId=${userId}`;
