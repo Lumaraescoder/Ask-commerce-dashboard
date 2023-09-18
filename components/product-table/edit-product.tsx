@@ -52,10 +52,9 @@ export const EditProduct = (product: Props) => {
   };
 
   const onChangeEdit = async (id: any, newData: any) => {
-   
+    const token = localStorage.getItem("token");
 
     try{
-      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQ3YmMxZjllMTk3YzkxZTZkMDk1MyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NDYyMzE4NywiZXhwIjoxNjk0NjI2Nzg3fQ.8CaaF4bP8hK1-6DzwPIS_D8PnSujw0Zo8a6Bdt4TOlc';
       const response = await fetch(`http://localhost:3333/products/${changedProduct._id}`,  {
         method: "PUT",
         body: JSON.stringify(
