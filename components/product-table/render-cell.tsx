@@ -1,11 +1,10 @@
 import {Col, Row,Tooltip} from '@nextui-org/react';
 import React from 'react';
 import {DeleteIcon} from '../icons/table/delete-icon';
-import {EditIcon} from '../icons/table/edit-icon';
 import {EyeIcon} from '../icons/table/eye-icon';
-import {users} from './data';
 import {IconButton} from './table.styled';
 import { Product } from './table';
+import {EditProduct} from './edit-product';
 
 interface Props {
    product: Product;
@@ -38,7 +37,7 @@ export const RenderCell = ({product, columnKey}: Props) => {
                      <IconButton
                         onClick={() => console.log('Edit product', product._id)}
                      >
-                        <EditIcon size={20} fill="#979797" />
+                        <EditProduct product={product}/>
                      </IconButton>
                   </Tooltip>
                </Col>

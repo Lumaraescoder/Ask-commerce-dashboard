@@ -51,6 +51,7 @@ const Login = () => {
         const decodedToken = jwt_decode(token) as { id: string };
         const userId = decodedToken.id;
         localStorage.setItem("userId", userId);
+        localStorage.setItem("token", token);
 
         if (isAdmin) {
           await router.push("/dashboard");
