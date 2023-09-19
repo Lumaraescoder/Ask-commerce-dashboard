@@ -21,7 +21,7 @@ const CardTextStyle = {
   backgroundImage: "linear-gradient(45deg, #0099ff, #0066cc)", // Cores azuis
 };
 
-const Login = () => {
+export const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const router = useRouter();
