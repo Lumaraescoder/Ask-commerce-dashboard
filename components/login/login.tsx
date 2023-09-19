@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       // Chamada à API
-      const res = await fetch("http://localhost:3333/auth/login", {
+      const res = await fetch("https://ask-commerce-api.onrender.com/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const Login = () => {
           await router.push("/dashboard");
         } else {
           const userId = localStorage.getItem("userId");
-          window.location.href = `http://localhost:8000/?userId=${userId}`;
+          window.location.href = `https://ask-commerce.vercel.app/?userId=${userId}`;
         }
       } else if (res.status === 404) {
         alert("Utilizador não encontrado!");

@@ -55,7 +55,7 @@ export const EditProduct = (product: Props) => {
     const token = localStorage.getItem("token");
 
     try{
-      const response = await fetch(`http://localhost:3333/products/${changedProduct._id}`,  {
+      const response = await fetch(`http://https://ask-commerce-api.onrender.com/products/${changedProduct._id}`,  {
         method: "PUT",
         body: JSON.stringify(
           newData

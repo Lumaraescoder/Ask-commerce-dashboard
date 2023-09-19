@@ -64,7 +64,7 @@ export const AddUser = () => {
       isAdmin: admin,
     };
 
-    fetch("http://localhost:3333/auth/register", {
+    fetch("https://ask-commerce-api.onrender.com/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export const AddUser = () => {
       .then((data) => {
         setResponse(data);
         closeModal();
-        mutate("http://localhost:3333/users");
+        mutate("https://ask-commerce-api.onrender.com/users");
         openSuccessModal();
 
         setUsername("");
