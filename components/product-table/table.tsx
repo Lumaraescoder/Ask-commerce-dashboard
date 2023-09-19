@@ -1,16 +1,34 @@
 import { Table } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
 import { Box } from "../styles/box";
-import { columns } from "./data";
+import { columns, users } from "./data";
 import { RenderCell } from "./render-cell";
-import useSWR, { mutate } from "swr";
-import { fetchData } from "./data";
+import useSWR from "swr";
+
+const getAllProducts = (url: string) => fetch(url).then((res) => res.json());
+
+export interface Product {
+  category: string;
+  description: string;
+  image: string;
+  price: string;
+  title: string;
+  __v: string;
+  _id: string;
+}
 
 export const TableWrapper = () => {
-  const { data: fetchedUsers, error } = useSWR(
-    "http://localhost:3333/users",
-    fetchData
+  const [products, setProducts] = useState<Product[]>([]);
+  const { data, error } = useSWR<Product[]>(
+    "http://localhost:3333/products",
+    getAllProducts
   );
+
+  useEffect(() => {
+    if (data) {
+      setProducts(data);
+    }
+  }, [data]);
 
   return (
     <Box
@@ -42,23 +60,24 @@ export const TableWrapper = () => {
             </Table.Column>
           )}
         </Table.Header>
-        <Table.Body>
-          {fetchedUsers &&
-            fetchedUsers.map((user: any) => (
-              <Table.Row key={user.id}>
-                {columns.map((column) => (
-                  <Table.Cell key={column.uid}>
-                    <RenderCell user={user} columnKey={column.uid} />
+        {
+          <Table.Body items={products}>
+            {(product) => (
+              <Table.Row key={`${product._id}_row`}>
+                {(columnKey) => (
+                  <Table.Cell>
+                    {RenderCell({ product, columnKey: columnKey })}
                   </Table.Cell>
-                ))}
+                )}
               </Table.Row>
-            ))}
-        </Table.Body>
+            )}
+          </Table.Body>
+        }
         <Table.Pagination
           shadow
           noMargin
           align="center"
-          rowsPerPage={Infinity}
+          rowsPerPage={8}
           onPageChange={(page) => console.log({ page })}
         />
       </Table>
