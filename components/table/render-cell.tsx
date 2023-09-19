@@ -24,6 +24,7 @@ interface Props {
 }
 
 interface EditedUser {
+  _id: string;
   username: string;
   firstName: string;
   lastName: string;
