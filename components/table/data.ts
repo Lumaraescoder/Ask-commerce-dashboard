@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-  const response = await fetch("http://localhost:3333/users");
+  const response = await fetch("https://ask-commerce-api.onrender.com/users");
   const data = await response.json();
   return data;
 };

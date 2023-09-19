@@ -8,7 +8,7 @@ import { fetchData } from "./data";
 
 export const TableWrapper = () => {
   const { data: fetchedUsers, error } = useSWR(
-    "http://localhost:3333/users",
+    "https://ask-commerce-api.onrender.com/users",
     fetchData
   );
 
