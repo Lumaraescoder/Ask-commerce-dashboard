@@ -80,7 +80,7 @@ export const EditProduct = (product: Props) => {
 
   return (
     <div>
-        <IconButton auto onClick={handler}>
+        <IconButton  onClick={handler}>
             <EditIcon size={20} fill="#979797" />
          </IconButton>
       <Modal
